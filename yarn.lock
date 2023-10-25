@@ -107,6 +107,11 @@
   resolved "https://registry.npmjs.org/@next/env/-/env-13.5.6.tgz"
   integrity sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw==
 
+"@next/env@13.5.7-canary.25":
+  version "13.5.7-canary.25"
+  resolved "https://registry.npmjs.org/@next/env/-/env-13.5.7-canary.25.tgz"
+  integrity sha512-vC8JOh862f+V+V0gf0ckZSf4zpZk1gnc5S/OPTFjxj7dgZkhwkn4Dtw54RePU0FuznEGApl/AuD5kQTq70WzuA==
+
 "@next/eslint-plugin-next@13.5.6":
   version "13.5.6"
   resolved "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.5.6.tgz"
@@ -119,10 +124,20 @@
   resolved "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-13.5.6.tgz"
   integrity sha512-Mc2b4xiIWKXIhBy2NBTwOxGD3nHLmq4keFk+d4/WL5fMsB8XdJRdtUlL87SqVCTSaf1BRuQQf1HvXZcy+rq3Nw==
 
+"@next/swc-linux-x64-gnu@13.5.7-canary.25":
+  version "13.5.7-canary.25"
+  resolved "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-13.5.7-canary.25.tgz"
+  integrity sha512-FbiQPlhwWQ857Wfm+oo3tJt7vBObEs6L74sfjadGwjCS/gkpmIXLxOimxjOnL/m2V2PdDEOeFgEUiOFARkvlkQ==
+
 "@next/swc-linux-x64-musl@13.5.6":
   version "13.5.6"
   resolved "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-13.5.6.tgz"
   integrity sha512-CFHvP9Qz98NruJiUnCe61O6GveKKHpJLloXbDSWRhqhkJdZD2zU5hG+gtVJR//tyW897izuHpM6Gtf6+sNgJPQ==
+
+"@next/swc-linux-x64-musl@13.5.7-canary.25":
+  version "13.5.7-canary.25"
+  resolved "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-13.5.7-canary.25.tgz"
+  integrity sha512-6go9KNxHP4r4rXRN3Stf/82AiAWW+Ku3emN5IZ2DsgZQfG1NrZv3X1rBHoDkPcy6nvw4M27RAsvaHx04748XzA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1765,7 +1780,7 @@ next-drupal@^1.5.0:
     react "^17.0.2 || ^18"
     react-dom "^17.0.2 || ^18"
 
-"next@^12.2.0 || ^13", next@^13:
+"next@^12.2.0 || ^13":
   version "13.5.6"
   resolved "https://registry.npmjs.org/next/-/next-13.5.6.tgz"
   integrity sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==
@@ -1787,6 +1802,29 @@ next-drupal@^1.5.0:
     "@next/swc-win32-arm64-msvc" "13.5.6"
     "@next/swc-win32-ia32-msvc" "13.5.6"
     "@next/swc-win32-x64-msvc" "13.5.6"
+
+next@^13.5.7-canary.25:
+  version "13.5.7-canary.25"
+  resolved "https://registry.npmjs.org/next/-/next-13.5.7-canary.25.tgz"
+  integrity sha512-GQrgFN7D+QXzIwv58sog8Xx6HVlcFfyA/4yFdtr3IPqTBRtdoxCucJiLdafQUFat9ZT+CIbWKKiA68zBPiyI9w==
+  dependencies:
+    "@next/env" "13.5.7-canary.25"
+    "@swc/helpers" "0.5.2"
+    busboy "1.6.0"
+    caniuse-lite "^1.0.30001406"
+    postcss "8.4.31"
+    styled-jsx "5.1.1"
+    watchpack "2.4.0"
+  optionalDependencies:
+    "@next/swc-darwin-arm64" "13.5.7-canary.25"
+    "@next/swc-darwin-x64" "13.5.7-canary.25"
+    "@next/swc-linux-arm64-gnu" "13.5.7-canary.25"
+    "@next/swc-linux-arm64-musl" "13.5.7-canary.25"
+    "@next/swc-linux-x64-gnu" "13.5.7-canary.25"
+    "@next/swc-linux-x64-musl" "13.5.7-canary.25"
+    "@next/swc-win32-arm64-msvc" "13.5.7-canary.25"
+    "@next/swc-win32-ia32-msvc" "13.5.7-canary.25"
+    "@next/swc-win32-x64-msvc" "13.5.7-canary.25"
 
 node-abi@^3.3.0:
   version "3.51.0"

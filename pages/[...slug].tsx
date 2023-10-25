@@ -40,8 +40,8 @@ export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
 export async function getStaticProps(
   context
 ): Promise<GetStaticPropsResult<NodePageProps>> {
-  // console.log("pathcontext", context, drupal);
-  debugger;
+  console.log("pathcontext", context, drupal);
+  // debugger;
   const path = await drupal.translatePathFromContext(context);
 
   if (!path) {

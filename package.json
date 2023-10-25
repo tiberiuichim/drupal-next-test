@@ -4,16 +4,15 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "debug": "NODE_OPTIONS='--inspect' next dev",
     "start": "next start",
     "preview": "next build && next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",
-    "next": "^13",
+    "next": "^13.5.7-canary.25",
     "next-drupal": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
