@@ -1,16 +1,17 @@
-import Head from "next/head"
-import { GetStaticPropsResult } from "next"
-import { DrupalNode } from "next-drupal"
+import Head from "next/head";
+import { GetStaticPropsResult } from "next";
+import { DrupalNode } from "next-drupal";
 
-import { drupal } from "lib/drupal"
-import { Layout } from "components/layout"
-import { NodeArticleTeaser } from "components/node--article--teaser"
+import { drupal } from "lib/drupal";
+import { Layout } from "components/layout";
+import { NodeArticleTeaser } from "components/node--article--teaser";
 
 interface IndexPageProps {
-  nodes: DrupalNode[]
+  nodes: DrupalNode[];
 }
 
 export default function IndexPage({ nodes }: IndexPageProps) {
+  // debugger;
   return (
     <Layout>
       <Head>
@@ -34,28 +35,29 @@ export default function IndexPage({ nodes }: IndexPageProps) {
         )}
       </div>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps(
   context
 ): Promise<GetStaticPropsResult<IndexPageProps>> {
   const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
-    "node--article",
+    "node--event",
     context,
     {
       params: {
         "filter[status]": 1,
-        "fields[node--article]": "title,path,field_image,uid,created",
-        include: "field_image,uid",
+        "filter[langcode]": "en",
+        "fields[node--event]": "title,path,uid,created,content_translations",
+        include: "uid", // field_image,uid
         sort: "-created",
       },
     }
-  )
+  );
 
   return {
     props: {
       nodes,
     },
-  }
+  };
 }

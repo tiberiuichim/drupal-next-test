@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
     "start": "next start",
     "preview": "next build && next start",
     "lint": "next lint"
