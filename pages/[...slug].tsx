@@ -5,6 +5,7 @@ import { DrupalNode } from "next-drupal";
 import { drupal } from "lib/drupal";
 import { NodeArticle } from "components/node--article";
 import { NodeBasicPage } from "components/node--basic-page";
+import { NodeMeeting } from "components/node--meeting";
 import { Layout } from "components/layout";
 
 const RESOURCE_TYPES = ["node--event"];
@@ -22,6 +23,7 @@ export default function NodePage({ resource }: NodePageProps) {
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
       </Head>
+      {resource.type === "node--event" && <NodeMeeting node={resource} />}
       {resource.type === "node--page" && <NodeBasicPage node={resource} />}
       {resource.type === "node--article" && <NodeArticle node={resource} />}
     </Layout>
@@ -66,6 +68,7 @@ export async function getStaticProps(
       params,
     }
   );
+  console.log(resource);
 
   // At this point, we know the path exists and it points to a resource.
   // If we receive an error, it means something went wrong on Drupal.
