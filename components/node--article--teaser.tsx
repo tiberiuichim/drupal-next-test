@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "antd";
 import { DrupalNode } from "next-drupal";
 
 import { absoluteUrl, formatDate } from "lib/utils";
@@ -8,7 +9,7 @@ interface NodeArticleTeaserProps {
   node: DrupalNode;
 }
 
-const getUrl = (node, language = "en") => {
+const getUrl = (node: DrupalNode, language = "en") => {
   return (
     node?.content_translations.find(({ langcode }) => langcode === language)
       .path || ""
@@ -16,7 +17,7 @@ const getUrl = (node, language = "en") => {
 };
 
 export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
-  console.log("node", node);
+  // console.log("node", node);
   return (
     <article {...props}>
       <Link href={getUrl(node)} className="no-underline hover:text-blue-600">
@@ -41,6 +42,8 @@ export function NodeArticleTeaser({ node, ...props }: NodeArticleTeaserProps) {
           />
         </figure>
       )}
+
+      <Button>View more</Button>
       <Link
         href={getUrl(node)}
         className="inline-flex items-center px-6 py-2 border border-gray-600 rounded-full hover:bg-gray-100"

@@ -1,31 +1,14 @@
-import { Roboto } from "next/font/google";
 import Link from "next/link";
 
 import { Breadcrumb } from "antd";
 import { ConfigProvider } from "antd";
 import { PreviewAlert } from "components/preview-alert";
-
-import colors from "colors";
-
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import theme from "theme";
 
 export function Layout({ children }) {
   return (
     <>
-      <ConfigProvider
-        theme={{
-          token: {
-            fontSize: 16,
-            borderRadius: 0,
-            fontFamily: roboto.style.fontFamily,
-            colorPrimary: colors["violet-light"],
-          },
-        }}
-      >
+      <ConfigProvider theme={theme()}>
         <PreviewAlert />
         <div className="max-w-screen-md px-6 mx-auto">
           <header>
