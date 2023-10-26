@@ -1,15 +1,16 @@
-import { GetStaticPathsResult, GetStaticPropsResult } from "next";
+import {
+  GetStaticPropsContext,
+  GetStaticPathsResult,
+  GetStaticPropsResult,
+} from "next";
 import Head from "next/head";
 import { DrupalNode } from "next-drupal";
-import { GetStaticPropsContext } from "next";
 
 import { drupal } from "lib/drupal";
 import { NodeArticle } from "components/node--article";
 import { NodeBasicPage } from "components/node--basic-page";
 import { NodeMeeting } from "components/node--meeting";
 import { Layout } from "components/layout";
-
-const RESOURCE_TYPES = ["node--event"];
 
 interface NodePageProps {
   resource: DrupalNode;
@@ -31,13 +32,14 @@ export default function NodePage({ resource }: NodePageProps) {
   );
 }
 
-export async function getStaticPaths(
-  context: GetStaticPropsContext
-): Promise<GetStaticPathsResult> {
-  const paths = await drupal.getStaticPathsFromContext(RESOURCE_TYPES, context);
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+  // const RESOURCE_TYPES = ["node--event"];
+  // context: GetStaticPropsContext
+  // const paths = await drupal.getStaticPathsFromContext(RESOURCE_TYPES, context);
   // console.log(paths.map((p) => p.params));
+
   return {
-    paths,
+    paths: [],
     fallback: "blocking",
   };
 }
@@ -71,7 +73,7 @@ export async function getStaticProps(
       params,
     }
   );
-  console.log(resource);
+  // console.log(resource);
 
   // At this point, we know the path exists and it points to a resource.
   // If we receive an error, it means something went wrong on Drupal.
