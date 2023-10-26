@@ -1,7 +1,7 @@
 import { GetStaticPathsResult, GetStaticPropsResult } from "next";
 import Head from "next/head";
 import { DrupalNode } from "next-drupal";
-// import { GetStaticProps } from "next";
+import { GetStaticPropsContext } from "next";
 
 import { drupal } from "lib/drupal";
 import { NodeArticle } from "components/node--article";
@@ -31,7 +31,9 @@ export default function NodePage({ resource }: NodePageProps) {
   );
 }
 
-export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
+export async function getStaticPaths(
+  context: GetStaticPropsContext
+): Promise<GetStaticPathsResult> {
   const paths = await drupal.getStaticPathsFromContext(RESOURCE_TYPES, context);
   // console.log(paths.map((p) => p.params));
   return {
@@ -41,7 +43,7 @@ export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
 }
 
 export async function getStaticProps(
-  context
+  context: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<NodePageProps>> {
   // console.log("pathcontext", context, drupal);
   // debugger;

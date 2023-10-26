@@ -1,20 +1,16 @@
-import React from "react";
-
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { NodeMeeting, NodeMeetingProps } from "./../components/node--meeting";
 
 const meta: Meta<typeof NodeMeeting> = {
-  title: "Example/Header",
+  title: "Content types/Meeting",
   component: NodeMeeting,
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "fullscreen",
+    layout: "padded",
   },
 };
-export default meta;
 
 const node = {
   type: "node--event",
@@ -85,6 +81,11 @@ const node = {
   relationshipNames: ["node_type", "revision_uid", "uid", "field_content"],
 };
 
-export const Meeting = ({ node }: NodeMeetingProps) => (
-  <NodeMeeting node={node} />
-);
+export default meta;
+type Story = StoryObj<typeof NodeMeeting>;
+
+export const Meeting: Story = {
+  args: {
+    node,
+  },
+};

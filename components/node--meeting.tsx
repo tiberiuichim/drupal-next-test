@@ -1,10 +1,14 @@
-import { DrupalNode } from "next-drupal"
+import { DrupalNode } from "next-drupal";
 
-interface NodeMeetingProps {
-  node: DrupalNode
+export interface NodeMeetingProps {
+  node: DrupalNode;
 }
 
+/**
+ * Page for Meetings content type
+ */
 export function NodeMeeting({ node, ...props }: NodeMeetingProps) {
+  console.log("node", node);
   return (
     <article {...props}>
       <h1 className="mb-4 text-6xl font-black leading-tight">{node.title}</h1>
@@ -15,5 +19,5 @@ export function NodeMeeting({ node, ...props }: NodeMeetingProps) {
         />
       )}
     </article>
-  )
+  );
 }
