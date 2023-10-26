@@ -14,7 +14,7 @@ start:
 
 .PHONY: build
 build:
-	npm run dev
+	npm run build
 
 .PHONY: start-prod
 start-prod:
