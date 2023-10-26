@@ -1,6 +1,7 @@
 import { GetStaticPathsResult, GetStaticPropsResult } from "next";
 import Head from "next/head";
 import { DrupalNode } from "next-drupal";
+// import { GetStaticProps } from "next";
 
 import { drupal } from "lib/drupal";
 import { NodeArticle } from "components/node--article";
@@ -42,7 +43,7 @@ export async function getStaticPaths(context): Promise<GetStaticPathsResult> {
 export async function getStaticProps(
   context
 ): Promise<GetStaticPropsResult<NodePageProps>> {
-  console.log("pathcontext", context, drupal);
+  // console.log("pathcontext", context, drupal);
   // debugger;
   const path = await drupal.translatePathFromContext(context);
 
