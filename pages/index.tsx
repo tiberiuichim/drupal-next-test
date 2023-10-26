@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { GetStaticPropsResult } from "next";
+import { GetStaticPropsResult, GetStaticPropsContext } from "next";
 import { DrupalNode } from "next-drupal";
 
 import { drupal } from "lib/drupal";
@@ -11,7 +11,6 @@ interface IndexPageProps {
 }
 
 export default function IndexPage({ nodes }: IndexPageProps) {
-  // debugger;
   return (
     <Layout>
       <Head>
@@ -39,7 +38,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
 }
 
 export async function getStaticProps(
-  context
+  context: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<IndexPageProps>> {
   const nodes = await drupal.getResourceCollectionFromContext<DrupalNode[]>(
     "node--event",
