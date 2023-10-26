@@ -1,6 +1,7 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { PreviewAlert } from "components/preview-alert"
+import { Breadcrumb } from "antd";
+import { PreviewAlert } from "components/preview-alert";
 
 export function Layout({ children }) {
   return (
@@ -9,6 +10,7 @@ export function Layout({ children }) {
       <div className="max-w-screen-md px-6 mx-auto">
         <header>
           <div className="container flex items-center justify-between py-6 mx-auto">
+            <Breadcrumb items={[{ title: "Home", href: "/" }]} />
             <Link href="/" className="text-2xl font-semibold no-underline">
               Next.js for Drupal
             </Link>
@@ -25,5 +27,5 @@ export function Layout({ children }) {
         <main className="container py-10 mx-auto">{children}</main>
       </div>
     </>
-  )
+  );
 }
