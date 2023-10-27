@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const rootDir = __dirname;
-console.log(rootDir);
 
 const nextConfig = {
   images: {
