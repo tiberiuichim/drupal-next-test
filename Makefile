@@ -19,10 +19,17 @@ start:
 build:
 	npm run build
 
+.next/BUILD_ID:
+	npm run build
+
 .PHONY: start-prod
-start-prod:
+start-prod:	.next/BUILD_ID
 	npm run start
 
 .PHONY: test
 test:		## Run Jest tests
 	npm run test
+
+.PHONY: clean
+clean:		## Cleanup nextjs build folder
+	rm -rf ./.next
