@@ -7,6 +7,7 @@ help: ## This help message
 
 .PHONY: install
 install:		## make install
+	npm install -g npm
 	$(NPM) i --legacy-peer-deps
 
 .PHONY: install

@@ -19,12 +19,12 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "antd": "^5.10.2",
     "next": "^13.5.6",
     "next-drupal": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.31.2"
+    "sharp": "^0.31.2",
+    "@eaudeweb/ui": "workspace:^"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.1",
@@ -50,5 +50,8 @@
     "storybook": "^7.5.1",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.3"
-  }
+  },
+  "workspaces": [
+    "packages/ui"
+  ]
 }
