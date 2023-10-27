@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { NodeMeeting } from "./../components/node--meeting";
-import { meetingNode } from "./fixtures";
+import { meetingNode } from "./../__tests__/fixtures";
 
 const meta: Meta<typeof NodeMeeting> = {
   title: "Content types/Meeting",

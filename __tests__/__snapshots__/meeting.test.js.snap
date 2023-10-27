@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index page matches snapshot 1`] = `
+<DocumentFragment>
+  <article>
+    <h1
+      class="mb-4 text-6xl font-black leading-tight"
+    >
+      88th meeting
+    </h1>
+  </article>
+</DocumentFragment>
+`;

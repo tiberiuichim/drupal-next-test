@@ -13,11 +13,9 @@ export default function theme() {
   return {
     token: {
       fontSize: 16,
-      borderRadius: 0,
       fontFamily: roboto.style.fontFamily,
       colorPrimary: colors["violet-light"],
       // Seed Token
-      colorPrimary: "#00b96b",
       borderRadius: 2,
 
       // Alias Token
@@ -25,7 +23,7 @@ export default function theme() {
     },
     components: {
       Button: {
-        colorPrimary: "#00b96b",
+        colorPrimary: "blue",
         algorithm: true, // Enable algorithm
       },
       Input: {
